@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('* * * * *')
+    triggers{
+	pollSCM('* * * * *')
     }
 
     environment {
@@ -14,13 +14,14 @@ pipeline {
         stage('Build') {
             steps{
                 sh './gradlew build'
-                sh 'ls build/libs'
+		sh 'ls build/libs'
+		sh 'ls build/libs'
             }
         }
 
         stage('Docker image') {
             steps{
-                sh './genImages.sh'
+                sh './genImage.sh'
             }
         }
 
