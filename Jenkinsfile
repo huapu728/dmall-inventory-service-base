@@ -15,7 +15,6 @@ pipeline {
             steps{
                 sh './gradlew build'
 		sh 'ls build/libs'
-		sh 'ls build/libs'
             }
         }
 
